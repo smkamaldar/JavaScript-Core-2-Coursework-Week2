@@ -11,7 +11,23 @@ body {
   font-family: "Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+li{
+  padding: 20px;
+  min-width: 300px;
+  margin:5px;
+}
+img{
 
+  height:300px ;
+  object-fit:contain;
+
+}
 .site-footer {
   margin-top: 4em;
 }

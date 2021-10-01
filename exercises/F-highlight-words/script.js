@@ -1,5 +1,34 @@
 function highlightWords(paragraph, colours) {
-  // Write your code here...
+  const content = document.querySelector("#content");
+  const p = document.createElement("p");
+  const select = document.createElement("select");
+
+  colours.forEach((colour) => {
+    const option = document.createElement("option");
+    option.innerText = colour;
+    select.appendChild(option);
+  });
+  const para = paragraph.split(" ");
+  // ['Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.', 'Curabitur', 'convallis', 'massa', 'ut', 'sem', 'finibus', 'ultrices.', 'Phasellus', 'hendrerit', 'placerat', 'libero...']
+  
+  para.forEach((word) => {
+    const span = document.createElement("span");
+    span.innerText = word + " ";
+    p.appendChild(span);
+    
+    span.addEventListener("click", () => {
+      if (select.value == "none") {
+        span.style.backgroundColor = "";
+      } else {
+        // by value property we have an access to the value of our select
+        let valueOfSelect = select.value;
+        span.style.backgroundColor = valueOfSelect;
+      }
+    });
+  });
+
+  content.appendChild(p);
+  content.appendChild(select);
 }
 
 const paragraph =
